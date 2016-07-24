@@ -416,7 +416,8 @@ MStatus ExplodedView::processPositions(const double &distance, const MVector &sp
 		offset.y *= spread.y;
 		offset.z *= spread.z;
 
-		offset += push + (this->shellDeltas[ this->shellIDs[index] ] * distance);
+		offset += push;
+		offset += (this->shellDeltas[ this->shellIDs[index] ] * distance);
 
 		this->positions[index] += this->shellDeltas[ this->shellIDs[index] ] + offset;
 	}
